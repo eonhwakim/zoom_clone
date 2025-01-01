@@ -16,4 +16,10 @@ const server = http.createServer(app);
 
 const wss = new WebSocket.Server({ server });
 
+
+wss.on('connection', (socket) => {
+  console.log('Conneted to Browser🍀', );
+  socket.send('Hello!');
+});
+
 server.listen(3000, handelListen);
